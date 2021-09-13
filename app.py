@@ -5,12 +5,12 @@ Data Incubator milestone project: stock chart
 
 from datetime import datetime, timedelta
 from pandas import DataFrame
-from pandas_datareader import data as pdr
 import yfinance as yf
 from math import pi
 from calendar import monthrange
 import streamlit as st
 from bokeh.plotting import figure, show, output_file
+from pandas_datareader import data as pdr
 
 yf.pdr_override()
 

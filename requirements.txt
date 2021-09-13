@@ -1,7 +1,9 @@
 pandas
 streamlit
-plotly
+pandas-datareader
 python-dotenv
-altair
+yfinance
+math
+calendar
 bokeh
 requests
