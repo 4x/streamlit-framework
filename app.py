@@ -11,6 +11,7 @@ from calendar import monthrange
 import streamlit as st
 from bokeh.plotting import figure, show, output_file
 from pandas_datareader import data as pdr
+import plotly.graph_objects as go
 
 yf.pdr_override()
 
@@ -51,3 +52,10 @@ with st.form("my_form"):
              p.vbar(data.index, w, data.Open, data.Close, fill_color="#D5E1DD", line_color="black")           
         st.write(p)
         show(p)
+        
+        fig = go.Figure(data=go.Ohlc(x=data.index,
+                    open=data.Open,
+                    high=data.High,
+                    low=data.Low,
+                    close=data.Close))
+        fig.show()
