@@ -3,7 +3,6 @@ streamlit
 pandas-datareader
 python-dotenv
 yfinance
-math
 calendar
 bokeh
 requests
