@@ -3,5 +3,6 @@ streamlit
 pandas-datareader
 python-dotenv
 yfinance
+plotly
 bokeh
 requests
