@@ -50,6 +50,7 @@ with st.form("my_form"):
             p.vbar(data.index, w, data.Open, data['Adj Close'], fill_color="#D5E1DD", line_color="black")
         else:
              p.vbar(data.index, w, data.Open, data.Close, fill_color="#D5E1DD", line_color="black")           
+        st.write(data)
         st.write(p)
         show(p)
         
@@ -59,3 +60,4 @@ with st.form("my_form"):
                     low=data.Low,
                     close=data.Close))
         fig.show()
+        st.plotly_chart(fig)
