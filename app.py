@@ -9,7 +9,6 @@ import yfinance as yf
 from math import pi
 from calendar import monthrange
 import streamlit as st
-from bokeh.plotting import figure, show, output_file
 from pandas_datareader import data as pdr
 import plotly.graph_objects as go
 
@@ -41,23 +40,10 @@ with st.form("my_form"):
                 print("Tried 5 times, Yahoo error. Trying after 2 minutes")
                 time.sleep(120)
                 data = pdr.get_data_yahoo(symbol, start=start, end=end)
-                                    
-        p = figure(x_axis_type="datetime",
-                   tools=TOOLS, title = symbol.upper())
-        p.xaxis.major_label_orientation = pi/4
-        p.segment(data.index, data.High, data.index, data.Low, color="black")
-        if adjusted:
-            p.vbar(data.index, w, data.Open, data['Adj Close'], fill_color="#D5E1DD", line_color="black")
-        else:
-             p.vbar(data.index, w, data.Open, data.Close, fill_color="#D5E1DD", line_color="black")           
-        st.write(data)
-        st.write(p)
-        show(p)
-        
         fig = go.Figure(data=go.Ohlc(x=data.index,
                     open=data.Open,
                     high=data.High,
                     low=data.Low,
                     close=data.Close))
-        fig.show()
+        #fig.show()
         st.plotly_chart(fig)
