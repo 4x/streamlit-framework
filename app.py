@@ -50,3 +50,4 @@ with st.form("my_form"):
         else:
              p.vbar(data.index, w, data.Open, data.Close, fill_color="#D5E1DD", line_color="black")           
         st.write(p)
+        show(p)
